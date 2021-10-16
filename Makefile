@@ -11,6 +11,8 @@ bootstrap:
 	wget -O $(dir_download)/$(archive_buildroot) $(url_buildroot)
 	tar zxvf $(dir_download)/$(archive_buildroot) -C $(dir_buildroot) --strip-components=1
 	cp $(dir_configs)/buildroot $(dir_buildroot)/.config
+	cp $(dir_configs)/m4.mk $(dir_buildroot)/package/m4/m4.mk
+	cp $(dir_configs)/m4.hash $(dir_buildroot)/package/m4/m4.hash
 
 build:
 	make -j10 -C $(dir_buildroot)
